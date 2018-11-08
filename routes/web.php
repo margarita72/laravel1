@@ -13,7 +13,8 @@
 
 Route::get('tasks', function () {
 	//$tasks = DB::table('tasks')->get();
-	$tasks = App\Task::all();
+	//$tasks = App\Task::all();
+	$tasks = App\Task::incomplete();
     return view('tasks.index',compact('tasks'));
 });
 Route::get('/tasks/{tas}', function ($id) {
